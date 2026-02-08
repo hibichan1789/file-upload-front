@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>ファイルアップロード</title>
+        <link rel="stylesheet" href="src/style.css">
+        <script type="module" src="src/main.ts"></script>
+    </head>
+    <body>
+        <header>
+            <h1>ファイルアップロードアプリ</h1>
+        </header>
+        <main>
+            <div id="file-upload-area">
+                <form enctype="multipart/form-data">
+                    <div>
+                        <label for="upload-file">ファイル選択:</label>
+                        <input type="file" name="upload-file" id="upload-file">
+                    </div>
+                    <p id="file-info">ここにファイルをドラッグするか選択してください</p>
+                    <button type="submit" id="upload-button">アップロード</button>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; hibichan1789</p>
+        </footer>
+    </body>
+</html>
