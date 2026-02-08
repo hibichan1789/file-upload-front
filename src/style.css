@@ -1,0 +1,10 @@
+#file-upload-area.drag-over{
+    background-color: #22cc22;
+}
+#file-upload-area *{
+    pointer-events: none;
+}
+
+#upload-file, #upload-button{
+    pointer-events: auto;
+}
