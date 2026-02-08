@@ -10,6 +10,9 @@ function showFileName(uploadFile:File, para:HTMLParagraphElement):void{
     const fileName = extractFileName(uploadFile);
     para.textContent = `選択されたファイル名: ${fileName}`;
 }
+function validateFileSize(uploadFile:File, maxMB:number=2):boolean{
+    return uploadFile.size <= maxMB * 1024 * 1024;
+}
 inputFile.addEventListener("change", ()=>{
     console.log("ファイルが選択された");
     const uploadFiles = inputFile.files;
@@ -18,6 +21,10 @@ inputFile.addEventListener("change", ()=>{
     }
     const uploadFile = uploadFiles[0] as File;
     console.log(uploadFile)
+    if(!validateFileSize(uploadFile)){
+        window.alert("ファイルサイズが大きすぎます");
+        return;
+    }
     showFileName(uploadFile, fileInfo);
     fileState = uploadFile;
 });
@@ -43,8 +50,12 @@ fileArea.addEventListener("drop", (event:DragEvent)=>{
     }
     const uploadFile = uploadFiles[0] as File;
     console.log(uploadFile);
-    showFileName(uploadFile, fileInfo);
     fileArea.classList.remove("drag-over");
+    if(!validateFileSize(uploadFile)){
+        window.alert("ファイルサイズが大きすぎます");
+        return;
+    }
+    showFileName(uploadFile, fileInfo);
     fileState = uploadFile;
 });
 
