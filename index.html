@@ -11,14 +11,14 @@
             <h1>ファイルアップロードアプリ</h1>
         </header>
         <main>
-            <div id="file-upload-area">
-                <form enctype="multipart/form-data">
+            <div id="file-upload-area" class="upload-area">
+                <form enctype="multipart/form-data" class="form">
                     <div>
-                        <label for="upload-file">ファイル選択:</label>
-                        <input type="file" name="upload-file" id="upload-file">
+                        <label for="upload-file" id="upload-file-label">ファイル選択</label>
+                        <input type="file" name="upload-file" id="upload-file" class="file-button">
                     </div>
                     <p id="file-info">ここにファイルをドラッグするか選択してください</p>
-                    <button type="submit" id="upload-button">アップロード</button>
+                    <button type="submit" id="upload-button" class="button">アップロード</button>
                 </form>
             </div>
         </main>
